@@ -1,0 +1,77 @@
+.home-hello {
+	position:relative;
+}
+
+ .home img {
+	display: inherit;
+}
+
+.home-hello .item {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: 0;
+	border: 0;
+//	background: rgba(255,255,255, 0.6);
+	padding-bottom: 40px;
+}
+ .card.col.home h1 {
+	text-align: center;
+}
+ .card.col.home h2 {
+	text-align: center;
+}
+
+#home-map-view {
+	.scroll {
+		height: 100%;
+	}
+	.gmaps {
+		height: 91%;
+	}
+    .button-ride-now{
+        height: 9%;
+        width: 100%;
+    }
+    .button.button-block, .button.button-full {
+        margin-top: 0px;
+        height:100%;
+        margin-bottom: 0px;
+        font-size: 18px;
+    }
+}
+
+#booking-map-view {
+	.scroll {
+		height: 100%;
+	}
+	.gmaps {
+		height: 67%;
+	}
+    .button-ride-now{
+        width: 100%;
+    }
+    .button.button-block, .button.button-full {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        font-size: 14px;
+    }
+    .label-booking-1{
+        background-color:transparent;
+        width: 58%;
+        vertical-align:middle;
+        text-align: center;
+        border-radius: 1px;
+        border-color: black;
+        color: black;
+    }
+    .button-grey{
+        background-color:transparent;
+        width: 40%;
+        border-radius: 1px;
+        border-color: black;
+        font-size: 12px;
+        color: black;
+    }
+}

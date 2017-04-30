@@ -1,0 +1,17 @@
+<ion-view hide-back-button="true" hide-nav-button="false" view-title="Pickup Location">
+    <ion-nav-buttons side="right">
+        <div ng-click="vm.signout()">
+            <button class="button button-clear"><i class="icon ion-log-out"></i></button>
+        </div>
+    </ion-nav-buttons>
+    <ion-content ng-model="vm.location" id="home-map-view">
+        <gmaps  ng-if="vm.location" id="home-gmap"
+			center="vm.location.origin"
+			zoom="vm.location.zoom"
+			markers="vm.location.markers"> 
+		</gmaps>
+        <a class="button button-block" ng-click="vm.rideNow()" class=".button-ride-now">
+            Ride Now <i class="icon ion-android-arrow-dropright"></i>
+        </a>
+	</ion-content>
+</ion-view>

@@ -1,0 +1,10 @@
+<ion-list ng-if="data==null">
+    <center><b>There is no suggestion</b></center>
+</ion-list>
+
+<div ng-if="data!=null">
+    <ion-list ng-repeat="place in data">
+        <button ng-click="messageAgain(place)" style="margin-top:0px;margin-bottom:0px;" class="button button-block">{{place.loc}}</button>
+    </ion-list>
+</div>
+

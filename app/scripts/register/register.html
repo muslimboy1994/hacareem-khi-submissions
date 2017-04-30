@@ -1,0 +1,67 @@
+<ion-view hide-back-button="true" view-title="Register">
+    <ion-nav-buttons side="left"></ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <div ng-click="vm.login()">
+            <button style="font-weight:500" class="button button-clear">Login</button>
+        </div>
+    </ion-nav-buttons>
+	<form novalidate name="registerForm">
+		<ion-content style="scroll:100%">
+			<ion-list>
+				<ion-item class="item-input item-stacked-label">
+					<span class="input-label">Name</span>
+					<input type="text" name="name" ng-minlength="3" ng-model="vm.form.firstName" required />
+					<p ng-show="registerForm.firstName.$error.required && registerForm.firstName.$dirty" class="error-message">
+						Name is required
+					</p>
+					<p class="error-message" ng-show="registerForm.firstName.$error.minlength && registerForm.firstName.$dirty">
+						Name should be at least 3 characters
+					</p>
+				</ion-item>
+				<ion-item class="item-input item-stacked-label">
+					<span class="input-label">Phone number</span>
+					<input type="number" name="phone" ng-minlength="11" ng-maxlength="11" ng-model="vm.form.phoneNumber" />
+					<p class="error-message" ng-show="(registerForm.phone.$error.required || registerForm.phone.$error.number) && registerForm.phone.$dirty">
+						Valid phone number is required
+					</p>
+					<p class="error-message" ng-show="((registerForm.phone.$error.minlength || registerForm.phone.$error.maxlength) && registerForm.phone.$dirty)">
+						Phone number should be 10 digits
+					</p>
+				</ion-item>
+				<ion-item class="item-input item-stacked-label">
+					<span class="input-label">Email</span>
+					<input type="email" name="email" ng-model="vm.form.email" ng-minlength="5" required />
+					<p class="error-message" ng-show="registerForm.email.$error.required && registerForm.email.$dirty">
+						It should be a valid email
+					</p>
+					<p class="error-message" ng-show="(registerForm.email.$error.minlength && registerForm.email.$dirty)">
+						It should be at least 5 characters
+					</p>
+				</ion-item>
+				<!-- <ion-item  class="item-input item-stacked-label">
+					<span class="input-label">Address</span>
+					<input type="text" ng-model="vm.form.address" name="address" ng-minlength="5" required />
+					<p class="error-message" ng-show="registerForm.address.$error.required && registerForm.address.$dirty">
+						Address is required
+					</p>
+					<p class="error-message" ng-show="registerForm.address.$error.minlength && registerForm.address.$dirty">
+						Address should be at least 5 characters
+					</p>
+				</ion-item> -->
+				<ion-item class="item-input item-stacked-label">
+					<span class="input-label">Password</span>
+					<input type="password" ng-model="vm.form.password" name="password" required ng-minlength="5" />
+					<p class="error-message" ng-show="registerForm.password.$error.required && registerForm.password.$dirty">
+						Password*
+					</p>
+					<p class="error-message" ng-show="registerForm.password.$error.minlength && registerForm.password.$dirty">
+						It should be at least 5 characters
+					</p>
+				</ion-item>
+			</ion-list>
+		</ion-content>
+		<div class="bar bar-footer bar-calm" ng-click="vm.registerSubmit(registerForm)">
+			<div class="title">Submit</div>
+		</div>
+	</form>
+</ion-view>

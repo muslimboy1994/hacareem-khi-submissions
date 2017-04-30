@@ -1,0 +1,12 @@
+<ion-view hide-nav-button="true" hide-false-button="false"  view-title="Booking Finalization">
+    
+    <ion-content>
+        <ion-list>
+            <ion-item  height="30px" class="item-input item-stacked-label">
+                <span ng-if="vm.selectedPlace!=null" style="height:40px" class="input-label">Chalo from your location to "{{vm.selectedPlace.loc}}"</span>
+                <span ng-if="vm.selectedPlace==null" style="height:40px" class="input-label">Chalo from your location to ANYWHERE</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+</ion-view>

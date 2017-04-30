@@ -1,0 +1,41 @@
+<ion-view  hide-back-button="true" view-title="Login">
+    <ion-nav-buttons side="left"></ion-nav-buttons>
+    <ion-nav-buttons side="right">
+        <div ng-click="vm.showCart()">
+            <button style="font-weight:500" class="button button-clear">Signup</button>
+        </div>
+    </ion-nav-buttons>
+    <form novalidate name="loginForm">
+        <ion-content>
+            <ion-list>
+                <ion-item class="item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" name="email" ng-model="vm.form.email" ng-minlength="5" required />
+                    <p class="error-message" ng-show="loginForm.email.$error.required && loginForm.email.$dirty">
+                        It should be a valid email*
+                    </p>
+                    <p class="error-message" ng-show="(loginForm.email.$error.minlength && loginForm.email.$dirty)">
+                        It should be at least 5 characters*
+                    </p>
+                </ion-item>
+
+                <ion-item class="item-input item-stacked-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" ng-model="vm.form.password" name="password" required ng-minlength="5" />
+                    <p class="error-message" ng-show="loginForm.password.$error.required && loginForm.password.$dirty">
+                        Password*
+                    </p>
+                    <p class="error-message" ng-show="loginForm.password.$error.minlength && loginForm.password.$dirty">
+                        It should be at least 5 characters*
+                    </p>
+                </ion-item>
+            </ion-list>
+        </ion-content>
+
+
+        <div style="background-colo:#6bbd5b" class="bar bar-footer bar-calm" ng-click="vm.submit(loginForm)">
+            <div class="title">Login</div>
+        </div>
+
+    </form>
+</ion-view>

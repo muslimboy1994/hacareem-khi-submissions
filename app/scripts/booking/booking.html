@@ -1,0 +1,45 @@
+<ion-view view-title="Book Now">
+    
+    <ion-content ng-model="vm.location" id="booking-map-view">
+        <gmaps  ng-if="vm.location" id="home-gmap"
+			center="vm.location.origin"
+			zoom="vm.location.zoom"
+			markers="vm.location.markers"> 
+		</gmaps>
+        
+        <div class="row">
+            <div class="col col-50">
+                <a class="button button-block" ng-click="">
+                    <i class="icon ion-cash"></i> Drop Off-Fair
+                </a>
+            </div>
+            <div class="col col-50">
+                <a class="button button-block" ng-click="">
+                    <i class="icon ion-pricetag"></i> Promo Code
+                </a>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col" ng-model="vm.selected">
+                <a ng-if="vm.selected!=null" class="button label-booking-1">
+                    {{vm.selected.loc}}
+                </a>
+                <a ng-if="vm.selected==null" class="button label-booking-1">
+                    No end point
+                </a>
+                <a class="button button-grey" ng-click="vm.provideSuggested()">
+                    Use Suggested
+                </a>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col">
+                <a class="button button-block" ng-click="vm.chalo()">
+                    CHALO!
+                </a>
+            </div>
+        </div>
+	</ion-content>
+</ion-view>

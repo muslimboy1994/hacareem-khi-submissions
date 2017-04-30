@@ -1,0 +1,11 @@
+<ion-view hide-nav-button="true" hide-false-button="false"  view-title="Suggestions">
+    
+    <ion-content>
+        <ion-list ng-repeat="place in vm.suggestedPlaces">
+            <ion-item ng-click="vm.placeSelected(place)" height="30px" class="item-input item-stacked-label">
+                <span style="height:40px" class="input-label">{{place.loc}}</span>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+    
+</ion-view>
